@@ -1,0 +1,246 @@
+/* CSS variables */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --font-size-base: 16px;
+    --font-family-base: Arial, sans-serif;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Global styles */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+    color: #333;
+    background-color: var(--background-color);
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    padding: 2em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header styles */
+.cart-button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.cart-button:hover {
+    background-color: #5a6268;
+}
+
+.cart-badge {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+}
+
+/* Items grid styles */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1em;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 1em;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s;
+    height: 350px; /* Fixed height for all item cards */
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item img {
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the fixed height */
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.item h2 {
+    margin-top: 2em;
+}
+
+.item p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.add-to-cart-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: auto;
+    box-shadow: var(--box-shadow);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show-modal {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    box-shadow: var(--box-shadow);
+}
+
+.close {
+    float: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+.cart-total {
+    font-weight: bold;
+}
+
+.buy-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    box-shadow: var(--box-shadow);
+}
+
+.buy-btn:hover {
+    background-color: #0056b3;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#max-price {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 1em;
+}
+
+#search-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+}
